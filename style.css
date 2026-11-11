@@ -1,0 +1,106 @@
+/* 1. Variables (couleurs) : modifie-les pour changer tout le site */
+:root {
+  --green: #2e7d32;
+  --green-light: #e8f5e9;
+  --text: #1f2933;
+  --bg: #f5f7f5;
+}
+
+/* 2. Base */
+* {
+  box-sizing: border-box;   /* le padding ne fait plus déborder les éléments */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* 3. En-tête */
+header {
+  background: var(--green);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 { margin: 0; font-size: 1.5rem; }
+h2 { margin-top: 0; }
+
+/* 4. Mise en page : une colonne sur mobile */
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. Formulaire */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label { font-weight: bold; margin-bottom: 0.25rem; }
+
+select, input {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.85; }
+
+#message { color: #c62828; margin: 0.5rem 0 0; }
+
+/* 6. Panier */
+#basket { padding: 0; list-style: none; }
+
+#basket li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+#basket li button { padding: 0.3rem 0.6rem; font-size: 0.85rem; background: #c62828; }
+
+#total {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background: var(--green-light);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+/* 7. Responsive : à partir de 700 px, formulaire et panier côte à côte */
+@media (min-width: 700px) {
+  .layout { flex-direction: row; }
+  .layout .card { flex: 1; }
+}

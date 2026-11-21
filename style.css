@@ -20,11 +20,29 @@ body {
 }
 
 /* 3. En-tête */
-header {
+/*header {
   background: var(--green);
   color: white;
   padding: 1rem;
   text-align: center;
+}*/
+
+header {
+  background-color: #2e7d32;   /* couleur de secours si l'image ne charge pas */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('images/header.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  color: white;
+  text-align: center;
+  min-height: 50vh;            /* 40 % de la hauteur de l'écran */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* centre le titre et le menu verticalement */
+  align-items: center;
+
 }
 
 h1 { margin: 0; font-size: 1.5rem; }
